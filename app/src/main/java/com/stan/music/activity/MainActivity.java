@@ -1,8 +1,10 @@
-package com.stan.music;
+package com.stan.music.activity;
 
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.stan.music.R;
 
 public class MainActivity extends AppCompatActivity {
 
