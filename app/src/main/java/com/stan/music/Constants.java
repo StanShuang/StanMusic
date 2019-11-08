@@ -10,5 +10,6 @@ public interface Constants {
     interface SpKey{
         String AUTH_TOKEN = "authToken";
         String PHONE_NUMBER = "phoneNumber";
+        String USER_INFO = "userInfo";
     }
 }

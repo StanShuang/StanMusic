@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/local_music"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="10dp"
+        app:icon="@drawable/ic_local"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:name="@string/local_music"
+        app:show_gap="true"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/recent_play"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:icon="@drawable/ic_recent"
+        app:layout_constraintTop_toBottomOf="@+id/local_music"
+        app:name="@string/recent_play"
+        app:show_gap="true" />
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/download_manager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:icon="@drawable/ic_downlaod"
+        app:layout_constraintTop_toBottomOf="@+id/recent_play"
+        app:name="@string/download_manager"
+        app:show_gap="true" />
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/my_radio"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:layout_constraintTop_toBottomOf="@+id/download_manager"
+        app:icon="@drawable/ic_radio"
+        app:name="@string/my_radio"
+        app:show_gap="true" />
+
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/my_collection"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        app:layout_constraintTop_toBottomOf="@+id/my_radio"
+        app:icon="@drawable/ic_collection"
+        app:name="@string/my_collection"
+        app:show_gap="false" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/my_collection"
+        android:background="@color/colorLineView"
+         />
+    <RelativeLayout
+        android:id="@+id/rl_create_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+        <ImageView
+            android:id="@+id/iv_icon_below"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_20"
+            android:src="@drawable/shape_below"
+            android:layout_marginTop="@dimen/dp_8"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_icon_below"
+            android:text="创建的歌单"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_create_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="(0)"
+            android:textColor="@color/colorTextSecond"
+            android:layout_toEndOf="@id/text1"
+            android:layout_marginStart="@dimen/dp_5"/>
+        <ImageView
+            android:id="@+id/iv_new"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_toLeftOf="@+id/iv_more"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:src="@drawable/ic_new_black"
+            android:layout_marginTop="@dimen/dp_8"/>
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:src="@drawable/ic_more_black"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_mine_playlist"
+        android:layout_below="@id/rl_create_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rl_create_playlist"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:id="@+id/rl_collection_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        app:layout_constraintTop_toBottomOf="@+id/rv_mine_playlist">
+        <ImageView
+            android:id="@+id/iv_icon_below_collection"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_20"
+            android:src="@drawable/shape_below"
+            android:layout_marginTop="@dimen/dp_8"/>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_3"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_icon_below_collection"
+            android:text="创建的歌单"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_collection_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="(0)"
+            android:textColor="@color/colorTextSecond"
+            android:layout_toEndOf="@id/text"
+            android:layout_marginStart="@dimen/dp_5"/>
+
+        <ImageView
+            android:id="@+id/iv_more_collection"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:src="@drawable/ic_more_black"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

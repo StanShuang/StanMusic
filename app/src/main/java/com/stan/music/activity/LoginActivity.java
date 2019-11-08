@@ -7,10 +7,14 @@ import android.widget.EditText;
 
 import com.hjq.toast.ToastUtils;
 import com.stan.music.R;
+import com.stan.music.activity.mvp.contract.LoginContract;
+import com.stan.music.activity.mvp.presenter.LoginPresenter;
 import com.stan.music.base.BaseActivity;
-import com.stan.music.base.BasePresenter;
+import com.stan.music.bean.LoginBean;
+import com.stan.music.utils.ActivityStarter;
 import com.stan.music.utils.ClickUtil;
 import com.stan.music.utils.InputUtil;
+import com.stan.music.utils.LogUtil;
 import com.stan.music.utils.ScreenUtils;
 import com.stan.music.utils.SharePreferenceUtil;
 
@@ -18,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
     private static final String TAG = "LoginActivity";
 
     @BindView(R.id.et_phone)
@@ -49,8 +53,8 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected BasePresenter onCreatePresenter() {
-        return null;
+    protected LoginPresenter onCreatePresenter() {
+        return new LoginPresenter(this);
     }
 
     @Override
@@ -72,7 +76,8 @@ public class LoginActivity extends BaseActivity {
                 phoneNumber = etPhone.getText().toString();
                 passWord = etPwd.getText().toString();
                 if(InputUtil.checkMobileLegel(phoneNumber) && InputUtil.checkPasswordLegel(passWord)){
-
+                    showDialog();
+                    mPresenter.login(phoneNumber,passWord);
                 }
                 break;
             case R.id.register:
@@ -83,4 +88,27 @@ public class LoginActivity extends BaseActivity {
                 break;
         }
     }
+
+    @Override
+    public void onLoginSuccess(LoginBean bean) {
+        hideDialog();
+        LogUtil.d(TAG, "onLoginSuccess : " + bean);
+        SharePreferenceUtil.getInstance(this).saveUserInfo(bean,phoneNumber);
+        ActivityStarter.getInstance().startMainActivity(this);
+        finish();
+
+    }
+
+    @Override
+    public void onLoginFail(String error) {
+        hideDialog();
+        LogUtil.w(TAG, "onLoginFail : " + error);
+        if (error.equals("HTTP 502 Bad Gateway")) {
+            ToastUtils.show(R.string.enter_correct_password);
+        } else {
+            ToastUtils.show(error);
+        }
+    }
+
+
 }

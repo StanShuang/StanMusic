@@ -20,7 +20,7 @@ public class App extends Application {
         ToastUtils.init(this);
     }
 
-    public static App getmContext() {
+    public static App getContext() {
         return mContext;
     }
 }

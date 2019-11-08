@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.stan.music.Constants;
+import com.stan.music.bean.LoginBean;
 
 /**
  * Author: Stan
@@ -56,8 +57,18 @@ public class SharePreferenceUtil {
     public String getAccountNum(){
         return getString(Constants.SpKey.PHONE_NUMBER,"");
     }
-    public void setAccountNum(String num){
+    public void saveAccountNum(String num){
         saveString(Constants.SpKey.PHONE_NUMBER,num);
+    }
+    public void saveUserInfo(LoginBean bean,String phoneNumber){
+        if(bean.getBindings().size() > 1){
+            setAuthToken(bean.getBindings().get(1).getTokenJsonStr());
+        }
+        saveAccountNum(phoneNumber);
+        saveString(Constants.SpKey.USER_INFO,GsonUtil.toJson(bean));
+    }
+    public String  getUserInfo(String defaultValue){
+        return getString(Constants.SpKey.USER_INFO,defaultValue);
     }
     private String getString(String key, String value) {
         return sp.getString(key,value);

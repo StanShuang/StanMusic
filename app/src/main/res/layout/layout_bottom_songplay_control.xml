@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45"
+    android:background="#CCFFFFFF">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="@dimen/dp_35"
+        android:layout_height="@dimen/dp_35"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/shape_record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_bottom_controller"
+        android:layout_width="@dimen/dp_22"
+        android:layout_height="@dimen/dp_22"
+        android:layout_marginEnd="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_bottom_controller"/>
+
+    <ImageView
+        android:id="@+id/iv_bottom_play"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+       android:layout_marginEnd="20dp"
+        android:src="@drawable/shape_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_bottom_controller"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_songname"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="还没有歌曲哦~"
+        android:textColor="#333333"
+        android:paddingStart="10dp"
+        android:paddingEnd="@dimen/dp_10"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@+id/iv_bottom_play"
+        app:layout_constraintStart_toEndOf="@+id/iv_cover"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_singer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="快来找找歌听8~"
+        android:paddingStart="10dp"
+        android:textColor="#838383"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_bottom_play"
+        app:layout_constraintStart_toEndOf="@+id/iv_cover"
+        app:layout_constraintTop_toBottomOf="@+id/tv_songname" />
+
+
+</android.support.constraint.ConstraintLayout>

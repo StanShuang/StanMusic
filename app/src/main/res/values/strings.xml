@@ -13,10 +13,31 @@
     <string name="please_input_phone_number_correctly">请输入有效的电话号码</string>
     <string name="please_input_pwd">请输入密码</string>
     <string name="pwd_must_less_than_30">请输入小于30位的密码</string>
+    <string name="enter_correct_password">请正确输入密码</string>
+    <string name="msg">我的消息</string>
+    <string name="mi">听歌识曲</string>
+    <string name="ticket">演出</string>
+    <string name="friend">朋友</string>
+    <string name="theme">个性换肤</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="setting">设置</string>
+    <string name="logout">退出</string>
+
+    <string name="mine">我的</string>
+    <string name="wow">发现</string>
+    <string name="feed">云村</string>
+    <string name="video">视频</string>
 
 
-
+    <string name="mine_fm">私人FM</string>
 
 
     <string name="colorBlack">#333333</string>
+
+
+    <string name="local_music">本地音乐</string>
+    <string name="recent_play">最近播放</string>
+    <string name="my_radio">我的电台</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="download_manager">本地下载</string>
 </resources>

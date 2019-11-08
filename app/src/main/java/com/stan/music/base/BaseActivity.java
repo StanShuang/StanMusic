@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.stan.music.R;
+import com.stan.music.widget.LodingDialog;
 
 /**
  * Author: Stan
@@ -22,6 +24,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     private static final String TAG = "BaseActivity";
     private Context mContext;
     protected P mPresenter;
+    protected LodingDialog mDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,10 +33,18 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             mPresenter = onCreatePresenter();
         }
         mContext = this;
+        createDialog();
         onCreateView(savedInstanceState);
         initModule();
         initData();
     }
+
+    private void createDialog() {
+        if(mDialog == null){
+            mDialog = new LodingDialog(this,"loading...");
+        }
+    }
+
     protected abstract void onCreateView(Bundle savedInstanceState);
 
     protected abstract void initModule();
@@ -70,7 +81,16 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         leftTitle.setVisibility(View.VISIBLE);
         leftTitle.setText(resId);
     }
-
+    public void showDialog(){
+        if(mDialog != null && !mDialog.isShowing()){
+            mDialog.show();
+        }
+    }
+    public void hideDialog(){
+        if(mDialog != null && mDialog.isShowing()){
+            mDialog.dismiss();
+        }
+    }
     @Override
     protected void onDestroy() {
         System.gc();
@@ -78,6 +98,5 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             mPresenter = null;
         }
         super.onDestroy();
-
     }
 }
