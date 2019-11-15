@@ -54,8 +54,14 @@ public class MineItemView extends RelativeLayout {
             itemName.setText(text);
 
             boolean isShowGap = ta.getBoolean(R.styleable.MineItemView_show_gap, false);
+            boolean isShowCount = ta.getBoolean(R.styleable.MineItemView_show_count,true);
             if (isShowGap) {
                 tvGap.setVisibility(VISIBLE);
+            }
+            if(isShowCount){
+                tvCount.setVisibility(VISIBLE);
+            }else{
+                tvCount.setVisibility(INVISIBLE);
             }
 
             ta.recycle();

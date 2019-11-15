@@ -21,5 +21,25 @@
         <item name="android:taskToBackEnterAnimation">@null</item>
         <item name="android:taskToBackExitAnimation">@null</item>
     </style>
+    <!--dialog 的style-->
+    <style name="BottomDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/BottomDialogAnimation</item>
+    </style>
+    <style name="BottomDialogAnimation">
+        <!--去掉标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--点击空白处退出-->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <!--窗体背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--窗体是否浮动-->
+        <item name="android:windowIsFloating">true</item>
+        <!--背景是否昏暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--昏暗数量-->
+        <item name="android:backgroundDimAmount">0.6</item>
+        <!--<item name="android:windowEnterAnimation">@anim/bottom_dialog_slide_show</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/bottom_dialog_slide_hide</item>-->
+    </style>
 
 </resources>

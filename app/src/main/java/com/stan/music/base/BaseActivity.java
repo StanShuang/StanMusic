@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gyf.immersionbar.ImmersionBar;
 import com.stan.music.R;
 import com.stan.music.widget.LodingDialog;
 

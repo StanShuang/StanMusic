@@ -4,5 +4,9 @@
         <attr name="icon" format="reference" />
         <attr name="name" format="reference" />
         <attr name="show_gap" format="boolean" />
+        <attr name="show_count" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="RoundRectView">
+        <attr name="roundRatio" format="float" />
     </declare-styleable>
 </resources>

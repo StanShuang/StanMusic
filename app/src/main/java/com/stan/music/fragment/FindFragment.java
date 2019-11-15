@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.stan.music.App;
 import com.stan.music.R;
 import com.stan.music.base.BaseFragment;
+import com.stan.music.base.BasePresenter;
 
 /**
  * Author: Stan
@@ -22,6 +23,16 @@ public class FindFragment extends BaseFragment {
     }
 
     @Override
+    protected BasePresenter onCreatePresenter() {
+        return null;
+    }
+
+    @Override
+    protected void initVariables(Bundle bundle) {
+
+    }
+
+    @Override
     protected void initData() {
 
     }
@@ -31,5 +42,10 @@ public class FindFragment extends BaseFragment {
         View rootView = inflater.inflate(R.layout.fragment_mine,container,false);
 
         return rootView;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

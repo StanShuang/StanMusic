@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.stan.music.R;
 import com.stan.music.base.BaseActivity;
@@ -19,14 +20,14 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onCreateView(Bundle savedInstanceState) {
-//        //透明状态栏
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //透明状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //        //透明导航栏
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         //隐藏导航栏和状态栏。
         View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        // View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |View.SYSTEM_UI_FLAG_FULLSCREEN
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.activity_splash);
 
@@ -68,7 +69,7 @@ public class SplashActivity extends BaseActivity {
             public void onFinish() {
                 String authToken = SharePreferenceUtil.getInstance(SplashActivity.this).getAuthToken("");
                 if(authToken.isEmpty()){
-                    ActivityStarter.getInstance().startMainActivity(SplashActivity.this);
+                    ActivityStarter.getInstance().startLoginActivity(SplashActivity.this);
                 }else{
                     ActivityStarter.getInstance().startMainActivity(SplashActivity.this);
                 }

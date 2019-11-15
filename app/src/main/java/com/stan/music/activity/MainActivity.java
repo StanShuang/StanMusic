@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,6 +97,7 @@ public class MainActivity extends BaseActivity {
         viewPager.setCurrentItem(1);
         mPagerAdapter.getItem(1).setUserVisibleHint(true);
         tabTitle.setupWithViewPager(viewPager);
+        tabTitle.setTabMode(TabLayout.MODE_FIXED);
         tabTitle.setTabTextColors(getResources().getColor(R.color.colorTextNormal),getResources().getColor(R.color.colorTextSelect));
         assert loginBean != null;
         initView(loginBean);
@@ -140,8 +142,9 @@ public class MainActivity extends BaseActivity {
     private void setSelectTextBoldAndBig(TabLayout.Tab tab) {
         TextView textView = (TextView) LayoutInflater.from(this).inflate(R.layout.design_layout_tab_text,null);
         textView.setText(tab.getText());
-        textView.setScaleX(1.3f);
+        textView.setScaleX(1.5f);
         textView.setScaleY(1.5f);
+        textView.setTextSize(10);
         textView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         textView.setTextColor(getResources().getColor(R.color.colorTextSelect));
         tab.setCustomView(textView);
