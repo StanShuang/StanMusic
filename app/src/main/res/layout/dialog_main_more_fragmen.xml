@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_background"
+    android:paddingBottom="10dp">
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_20"
+        tools:ignore="MissingConstraints" />
+    <View
+        android:id="@+id/view"
+        android:layout_below="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#f0f0f0"/>
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/item_download"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:name="@string/build_new_song_list"
+        app:show_count="false"
+        app:icon="@drawable/icon_add_song_list"
+        android:layout_below="@+id/view"
+        android:visibility="gone"/>
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/item_share"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:name="@string/management_song_list"
+        app:show_count="false"
+        app:icon="@drawable/manager_song_list"
+        android:layout_below="@+id/item_download"
+        android:visibility="gone"/>
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/item_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:name="@string/Import_song_list"
+        app:show_count="false"
+        app:icon="@drawable/import_song_list"
+        android:layout_below="@+id/item_share"
+        android:visibility="gone"/>
+    <com.stan.music.widget.MineItemView
+        android:id="@+id/item_delete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:name="@string/restore_song_list"
+        app:show_count="false"
+        android:layout_below="@+id/item_edit"
+        app:icon="@drawable/restore_song_list"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

@@ -17,6 +17,15 @@ public class PlayListItemBean {
 
     private int songNumber;
     private boolean defaultAvatar;
+    private String avatarUrl;
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
 
     public boolean isDefaultAvatar() {
         return defaultAvatar;

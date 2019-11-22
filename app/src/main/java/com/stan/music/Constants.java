@@ -11,5 +11,6 @@ public interface Constants {
         String AUTH_TOKEN = "authToken";
         String PHONE_NUMBER = "phoneNumber";
         String USER_INFO = "userInfo";
+        String LATEST_SONG = "latestSong";
     }
 }

@@ -103,6 +103,7 @@ public class UserPlaylistAdapter extends BaseAdapter<RecyclerView.ViewHolder, Pl
                 tvPlayListInfo.setText(bean.getSongNumber() + "首，by " + bean.getPlaylistCreator());
             }
             if (isShowSmartPlay && position == 0) {
+                tvName.setText("我喜欢的音乐");
                 rlSmartPlay.setVisibility(View.VISIBLE);
                 ivMoreInfo.setVisibility(View.GONE);
             } else {
@@ -120,7 +121,7 @@ public class UserPlaylistAdapter extends BaseAdapter<RecyclerView.ViewHolder, Pl
 
             llItem.setOnClickListener(v -> {
                 if (listener != null) {
-                    listener.onPlayListItemClick(i);
+                    listener.onPlayListItemClick(i,isShowSmartPlay);
                 }
             });
             ivMoreInfo.setOnClickListener( v -> {
@@ -132,7 +133,7 @@ public class UserPlaylistAdapter extends BaseAdapter<RecyclerView.ViewHolder, Pl
     }
 
     public interface OnPlayListItemClickListener {
-        void onPlayListItemClick(int position);
+        void onPlayListItemClick(int position,boolean isShowSmartPlay);
 
         void onSmartPlayClick(int position);
 

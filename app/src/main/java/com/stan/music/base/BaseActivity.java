@@ -80,6 +80,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         leftTitle.setVisibility(View.VISIBLE);
         leftTitle.setText(resId);
     }
+    public void setLeftTitleTextColorWhite() {
+        TextView leftTitle = findViewById(R.id.tv_left_title);
+        leftTitle.setTextColor(Color.parseColor("#ffffff"));
+    }
     public void showDialog(){
         if(mDialog != null && !mDialog.isShowing()){
             mDialog.show();

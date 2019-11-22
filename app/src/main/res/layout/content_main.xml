@@ -52,7 +52,7 @@
         android:id="@+id/main_viewpager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_gap"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_controller"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
@@ -60,13 +60,6 @@
     <com.stan.music.widget.BottomSongPlayBar
         android:id="@+id/bottom_controller"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_45"
         app:layout_constraintBottom_toBottomOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_gap"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_1"
-        android:background="#f0f0f0"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_controller" />
 </android.support.constraint.ConstraintLayout>

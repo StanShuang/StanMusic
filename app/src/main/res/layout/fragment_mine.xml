@@ -86,7 +86,8 @@
                 android:layout_height="@dimen/dp_20"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="@dimen/dp_8"
-                android:src="@drawable/shape_below" />
+                android:src="@drawable/ic_icon_blow"
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/text1"
@@ -151,7 +152,8 @@
                 android:layout_height="@dimen/dp_20"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="@dimen/dp_8"
-                android:src="@drawable/shape_below" />
+                android:src="@drawable/ic_icon_blow"
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/text"

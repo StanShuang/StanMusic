@@ -3,6 +3,9 @@ package com.stan.music;
 import android.app.Application;
 
 import com.hjq.toast.ToastUtils;
+import com.lzx.starrysky.StarrySky;
+import com.lzx.starrysky.StarrySkyConfig;
+
 
 /**
  * Author: Stan
@@ -17,9 +20,12 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
+        StarrySky.init(this,new MusicConfig());
         ToastUtils.init(this);
     }
+    private static class  MusicConfig extends StarrySkyConfig{
 
+    }
     public static App getContext() {
         return mContext;
     }

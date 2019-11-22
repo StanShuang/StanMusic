@@ -6,6 +6,7 @@
     <color name="colorWindowStatus">#Db2C1F</color>
     <color name="colorBackground">#FFFFFF</color>
     <color name="colorTabBar">#D33A31</color>
+    <color name="colorTabBarDark">#80D33A31</color>
     <color name="colorTextNormal">#E78C86</color>
     <color name="colorTextSelect">#FFFDFD</color>
     <color name="colorLine">#F0F0F0</color>

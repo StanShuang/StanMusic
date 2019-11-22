@@ -1,7 +1,4 @@
 package com.stan.music.api;
-
-import android.os.strictmode.CleartextNetworkViolation;
-
 import com.franmontiel.persistentcookiejar.ClearableCookieJar;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;

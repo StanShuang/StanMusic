@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="@drawable/shape_add_dialog_background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/build_song_list"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rl_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:layout_marginTop="25dp">
+
+        <EditText
+            android:id="@+id/et_input_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@+id/iv_delete"
+            android:background="@null"
+            android:focusable="true"
+            android:hint="请输入歌单标题"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorTextSecond"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/edit_delete"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/et_input_title"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextSecond" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_view"
+        android:layout_marginTop="10dp">
+
+        <CheckBox
+            android:id="@+id/cb_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/cb_setting"
+            android:text="设置为隐私歌单"
+            android:textColor="@color/colorText"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="0/40"
+            android:textColor="@color/colorTextSecond"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/rl_view1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#80D33A31"
+            android:text="提交"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTabBar"
+            android:text="取消"
+            android:textSize="14sp"
+            android:layout_toLeftOf="@+id/tv_submit"
+            android:layout_marginRight="40dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.lzx.starrysky.provider.SongInfo;
 import com.stan.music.Constants;
 import com.stan.music.bean.LoginBean;
 
@@ -70,6 +71,17 @@ public class SharePreferenceUtil {
     public String  getUserInfo(String defaultValue){
         return getString(Constants.SpKey.USER_INFO,defaultValue);
     }
+    /**
+     * 存储最近一次听过的歌曲
+     */
+    public void saveLatestSong(SongInfo songInfo) {
+        String song = GsonUtil.toJson(songInfo);
+        saveString(Constants.SpKey.LATEST_SONG, song);
+    }
+    public SongInfo getLatestSong() {
+        return GsonUtil.formJson(getString(Constants.SpKey.LATEST_SONG, ""), SongInfo.class);
+    }
+
     private String getString(String key, String value) {
         return sp.getString(key,value);
     }

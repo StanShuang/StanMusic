@@ -47,5 +47,11 @@
     <string name="item_edit">编辑歌单信息</string>
     <string name="item_share">分享</string>
     <string name="item_download">下载</string>
+    <string name="build_new_song_list">创建新歌单</string>
+    <string name="management_song_list">歌单管理</string>
+    <string name="Import_song_list">截图导入歌单</string>
+    <string name="restore_song_list">恢复歌单</string>
+    <string name="build_song_list">新建歌单</string>
+    <string name="title_song_list">歌单</string>
 
 </resources>

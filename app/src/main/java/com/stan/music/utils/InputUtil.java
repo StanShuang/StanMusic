@@ -41,4 +41,17 @@ public class InputUtil {
         }
         return true;
     }
+    /**
+     * 检查输入的合法性
+     */
+    public static  boolean checkInputLegel(String str,int length){
+        if(TextUtils.isEmpty(str)){
+            ToastUtils.show("请输入标题!");
+            return false;
+        }else if(str.length() > length){
+            ToastUtils.show("请输入小于"+length+"位的标题!");
+            return false;
+        }
+        return true;
+    }
 }
