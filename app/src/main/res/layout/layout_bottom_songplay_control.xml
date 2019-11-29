@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="45dp"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="#CCFFFFFF">
+
     <TextView
         android:id="@+id/tv_gap"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_1"
         android:background="#f0f0f0"
         tools:ignore="MissingConstraints" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_cover"
         android:layout_width="@dimen/dp_35"
@@ -26,52 +28,52 @@
         android:layout_width="@dimen/dp_22"
         android:layout_height="@dimen/dp_22"
         android:layout_marginEnd="@dimen/dp_10"
+        android:src="@drawable/ic_bottom_controller"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_bottom_controller"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.stan.music.widget.PlayAndStopButton
         android:id="@+id/iv_bottom_play"
         android:layout_width="27dp"
         android:layout_height="27dp"
-       android:layout_marginEnd="20dp"
-        android:src="@drawable/shape_play"
+        android:layout_marginEnd="20dp"
+        android:background="#CCFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_bottom_controller"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:paddingTop="5dp"
         android:id="@+id/tv_songname"
         android:layout_width="0dp"
         android:layout_height="23dp"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:maxLines="1"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="@dimen/dp_10"
         android:singleLine="true"
         android:text="还没有歌曲哦~"
         android:textColor="#333333"
-        android:paddingStart="10dp"
-        android:paddingEnd="@dimen/dp_10"
         android:textSize="@dimen/sp_12"
         app:layout_constraintEnd_toStartOf="@+id/iv_bottom_play"
         app:layout_constraintStart_toEndOf="@+id/iv_cover"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:paddingBottom="3dp"
         android:id="@+id/tv_singer"
         android:layout_width="0dp"
         android:layout_height="22dp"
         android:ellipsize="end"
+        android:gravity="center_vertical"
         android:maxLines="1"
+        android:paddingStart="10dp"
+        android:paddingBottom="3dp"
         android:singleLine="true"
         android:text="快来找找歌听8~"
-        android:paddingStart="10dp"
         android:textColor="#838383"
         android:textSize="@dimen/sp_10"
-        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_bottom_play"
         app:layout_constraintStart_toEndOf="@+id/iv_cover"
